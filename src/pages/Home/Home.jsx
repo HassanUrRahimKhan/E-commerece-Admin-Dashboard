@@ -2,12 +2,20 @@ import React from 'react'
 import "./home.css";
 import FeaturedInfo from '../../components/featuredInfo/FeaturedInfo';
 import Chart from '../../components/chart/Chart';
+import {userData} from "../../dummyData";
+import WidgetLarge from '../../components/widgetLarge/WidgetLarge';
+import WidgetSmall from '../../components/widgetSmall/WidgetSmall';
 
 export default function Home() {
   return (
     <div className='home'>
         <FeaturedInfo/>
-        <Chart/>
+        <Chart data={userData} title="User Analytics" grid dataKey="Active User"/>
+        <div className="homeWidgets">
+          <WidgetSmall/>
+          <WidgetLarge/>
+
+        </div>
     </div>
   )
 }
