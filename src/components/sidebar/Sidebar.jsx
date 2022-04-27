@@ -43,22 +43,22 @@ export default function Sidebar() {
           <h3 className="sidebarTitle">Quick Menu</h3>
           <ul className="sidebarList">
             <li className="sidebarListItem">
-              <PersonOutlineIcon/>
+              <PersonOutlineIcon className='sidebarIcon'/>
               Users
             </li>
 
             <li className="sidebarListItem">
-             <InventoryIcon/>
+             <InventoryIcon className='sidebarIcon'/>
               Products
             </li>
 
             <li className="sidebarListItem">
-             <PaidIcon/>
+             <PaidIcon className='sidebarIcon'/>
               Transactions
             </li>
 
             <li className="sidebarListItem">
-              <SignalCellularAltIcon/>
+              <SignalCellularAltIcon className='sidebarIcon'/>
               Reports
             </li>
           </ul>
@@ -70,17 +70,17 @@ export default function Sidebar() {
           <h3 className="sidebarTitle">Notifications</h3>
           <ul className="sidebarList">
             <li className="sidebarListItem">
-              <MailOutlineIcon/>
+              <MailOutlineIcon className='sidebarIcon'/>
               Mail
             </li>
 
             <li className="sidebarListItem">
-              <FeedbackIcon/>
+              <FeedbackIcon className='sidebarIcon'/>
               Feedback
             </li>
 
             <li className="sidebarListItem">
-              <ChatBubbleOutlineIcon/>
+              <ChatBubbleOutlineIcon className='sidebarIcon'/>
               Messages
             </li>
 
@@ -94,17 +94,17 @@ export default function Sidebar() {
           <h3 className="sidebarTitle">Staff</h3>
           <ul className="sidebarList">
             <li className="sidebarListItem">
-              <ChatBubbleOutlineIcon/>
+              <ChatBubbleOutlineIcon className='sidebarIcon'/>
               Manage
             </li>
 
             <li className="sidebarListItem">
-              <TimelineIcon/>
+              <TimelineIcon className='sidebarIcon'/>
               Analytics
             </li>
 
             <li className="sidebarListItem">
-            <ReportIcon/>
+            <ReportIcon className='sidebarIcon'/>
               Reports
             </li>
           </ul>

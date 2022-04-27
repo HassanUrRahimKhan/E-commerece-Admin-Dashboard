@@ -1,20 +1,39 @@
 import Sidebar from "./components/sidebar/Sidebar.jsx";
 import Topbar from "./components/topBar/Topbar.jsx";
-import Home from "./pages/Home/Home"
+import Home from "./pages/Home/Home";
+import Userlist from "./pages/UserList/UserList";
 import "./app.css";
+import { DataGrid } from '@mui/x-data-grid';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom"; 
 
 function App() {
   return (
-    <div >
+   
+    <>
       <Topbar />
       <div className="container">
         <Sidebar />
-        <Home/>
+
+        <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/users" element={<Userlist />}/>
+
+        </Routes>
+       
       </div>
 
 
 
-    </div>
+    </>
+    
+
+
+
+    
   );
 }
 
