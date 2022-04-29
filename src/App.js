@@ -3,6 +3,7 @@ import Topbar from "./components/topBar/Topbar.jsx";
 import Home from "./pages/Home/Home";
 import Userlist from "./pages/UserList/UserList";
 import User from "./pages/user/User"
+import NewUser from "./pages/newUser/NewUser";
 import "./app.css";
 import { DataGrid } from '@mui/x-data-grid';
 import {
@@ -10,6 +11,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom"; 
+import ProductList from "./pages/productList/ProductList.jsx";
 
 function App() {
   return (
@@ -23,6 +25,11 @@ function App() {
         <Route path="/" element={<Home />}/>
         <Route path="/users" element={<Userlist />}/>
         <Route path="/user/:userId" element={<User />}/>
+        <Route path="/newUser" element={<NewUser />}/>
+        <Route path="/products" element={<ProductList />}/>
+        <Route path="/products/:productId" element={<User />}/>
+        <Route path="/newproduct" element={<NewUser />}/>
+        
 
         </Routes>
        
