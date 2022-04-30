@@ -12,6 +12,8 @@ import {
   Route,
 } from "react-router-dom"; 
 import ProductList from "./pages/productList/ProductList.jsx";
+import Product from "./pages/products/Product.jsx";
+import NewProduct from "./pages/newProduct/NewProduct.jsx";
 
 function App() {
   return (
@@ -27,8 +29,8 @@ function App() {
         <Route path="/user/:userId" element={<User />}/>
         <Route path="/newUser" element={<NewUser />}/>
         <Route path="/products" element={<ProductList />}/>
-        <Route path="/products/:productId" element={<User />}/>
-        <Route path="/newproduct" element={<NewUser />}/>
+        <Route path="/product/:productId" element={<Product/>}/>
+        <Route path="/newproduct" element={<NewProduct />}/>
         
 
         </Routes>
