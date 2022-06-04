@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState } from "react";
 import { useDispatch} from "react-redux";
+import { Navigate } from 'react-router-dom';
 import {login} from "../../redux/apiCalls"
 
 const Login = () => {
@@ -14,12 +15,19 @@ const Login = () => {
 
     }
 
+    //const userlogin = true;
+
     return (
+        <>
+    
+                
         <div>
             <input type="text" placeholder='username' onChange={e => setUsername(e.target.value)} />
             <input type="password" placeholder='password' onChange={e => setPassword(e.target.value)} />
             <button onClick={handleClick}>Login</button>
         </div>
+      
+        </>
     )
 }
 
