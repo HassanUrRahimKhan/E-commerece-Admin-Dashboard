@@ -12,14 +12,17 @@ import {
   Routes,
   Route,
   useLocation
-} from "react-router-dom"; 
+} from "react-router-dom";
 import ProductList from "./pages/productList/ProductList.jsx";
 import Product from "./pages/products/Product.jsx";
 import NewProduct from "./pages/newProduct/NewProduct.jsx";
 
 function App() {
   let location = useLocation();
-  console.log("🚀 ~ file: App.js ~ line 22 ~ App ~ location", location.pathname)
+  //console.log("🚀 ~ file: App.js ~ line 22 ~ App ~ location", location.pathname)
+
+  const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin;
+  //console.log(JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin);
 
   // useEffect(() => {
   //   if(location.pathname === "/login"){
@@ -32,14 +35,14 @@ function App() {
   // if(location.pathname === "/login"){
   //   return <Login />
   // }
-  if(location.pathname === "/login"){
+  if (location.pathname === "/login") {
     return <Login />
   }
   // else{
-    return (
-    
-      <>
-          {/* {userlogin? (
+  return (
+
+    <>
+      {/* {userlogin? (
             <>
             <Topbar />
             <div className="container">
@@ -80,39 +83,39 @@ function App() {
             </Routes>
            
           </div></>)} */}
-        
-        <>
-            <Topbar />
-            <div className="container">
-              <Sidebar />
-              <Routes>
-      
-              <Route path="/" element={<Home />}/>
-              <Route path="/users" element={<Userlist />}/>
-              <Route path="/user/:userId" element={<User />}/>
-              <Route path="/newUser" element={<NewUser />}/>
-              <Route path="/products" element={<ProductList />}/>
-              <Route path="/product/:productId" element={<Product/>}/>
-              <Route path="/newproduct" element={<NewProduct />}/>
-              <Route path="/login" element={<Login />}/>
-      
-              
-      
-              </Routes>
-             
-            </div>
-            </>
-  
-  
-      </>
-      
-  
-  
-  
-      
-    );
+      admin{admin && (
+      <>
+        <Topbar />
+        <div className="container">
+          <Sidebar />
+          <Routes>
+
+            <Route path="/" element={<Home />} />
+            <Route path="/users" element={<Userlist />} />
+            <Route path="/user/:userId" element={<User />} />
+            <Route path="/newUser" element={<NewUser />} />
+            <Route path="/products" element={<ProductList />} />
+            <Route path="/product/:productId" element={<Product />} />
+            <Route path="/newproduct" element={<NewProduct />} />
+            <Route path="/login" element={<Login />} />
+
+
+
+          </Routes>
+
+        </div>
+      </>)}
+
+
+    </>
+
+
+
+
+
+  );
   // }
- 
+
 }
 
 export default App;
