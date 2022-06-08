@@ -19,10 +19,10 @@ import NewProduct from "./pages/newProduct/NewProduct.jsx";
 
 function App() {
   let location = useLocation();
-  //console.log("🚀 ~ file: App.js ~ line 22 ~ App ~ location", location.pathname)
-
+  console.log("🚀 ~ file: App.js ~ line 22 ~ App ~ location", location.pathname)
+ 
   const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin;
-  //console.log(JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin);
+  console.log(JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin);
 
   // useEffect(() => {
   //   if(location.pathname === "/login"){
@@ -35,37 +35,15 @@ function App() {
   // if(location.pathname === "/login"){
   //   return <Login />
   // }
-  if (location.pathname === "/login") {
+  if (location.pathname === "/Login") {
+    console.log(location.pathname);
     return <Login />
   }
-  // else{
+  else if (admin) {
   return (
 
     <>
-      {/* {userlogin? (
-            <>
-            <Topbar />
-            <div className="container">
-              <Sidebar />
-              <Routes>
-      
-              <Route path="/" element={<Home />}/>
-              <Route path="/users" element={<Userlist />}/>
-              <Route path="/user/:userId" element={<User />}/>
-              <Route path="/newUser" element={<NewUser />}/>
-              <Route path="/products" element={<ProductList />}/>
-              <Route path="/product/:productId" element={<Product/>}/>
-              <Route path="/newproduct" element={<NewProduct />}/>
-              <Route path="/login" element={<Home />}/>
-      
-              
-      
-              </Routes>
-             
-            </div>
-            </>
-          ): (
-          <>
+      {/*
           <div className="container">
             <Routes>
     
@@ -83,28 +61,29 @@ function App() {
             </Routes>
            
           </div></>)} */}
-      admin{admin && (
-      <>
-        <Topbar />
-        <div className="container">
-          <Sidebar />
-          <Routes>
+      {
+        <>
+          <Topbar />
+          <div className="container">
+            <Sidebar />
+            <Routes>
 
-            <Route path="/" element={<Home />} />
-            <Route path="/users" element={<Userlist />} />
-            <Route path="/user/:userId" element={<User />} />
-            <Route path="/newUser" element={<NewUser />} />
-            <Route path="/products" element={<ProductList />} />
-            <Route path="/product/:productId" element={<Product />} />
-            <Route path="/newproduct" element={<NewProduct />} />
-            <Route path="/login" element={<Login />} />
+              <Route path="/" element={<Home />} />
+              <Route path="/users" element={<Userlist />} />
+              <Route path="/user/:userId" element={<User />} />
+              <Route path="/newUser" element={<NewUser />} />
+              <Route path="/products" element={<ProductList />} />
+              <Route path="/product/:productId" element={<Product />} />
+              <Route path="/newproduct" element={<NewProduct />} />
+            
 
 
 
-          </Routes>
+            </Routes>
 
-        </div>
-      </>)}
+          </div>
+        </>
+      }
 
 
     </>
@@ -114,7 +93,7 @@ function App() {
 
 
   );
-  // }
+  }
 
 }
 

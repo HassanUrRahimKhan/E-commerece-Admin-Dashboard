@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react'
 import { userRequest } from '../../requestMethods'
-import "./widgetLarge.css"
+import "./widgetLarge.css";
+import  { format } from 'timeago.js';
 
 export default function WidgetLarge() {
 
@@ -18,7 +19,7 @@ export default function WidgetLarge() {
   }, [])
 
   const Button = ({ type }) => {
-    return <button className={"widgetLgButton  " + type}>{type}</button>;
+    return <button className={"widgetLgButton" + type}>{type}</button>;
   };
   return (
     <div className='WidgetLarge'>
@@ -32,11 +33,11 @@ export default function WidgetLarge() {
         </tr>
 
 
-        {orders.map(order => {
+        {orders.map(order => (
 
-          // {console.log(order.userId)}
+            // {console.log(order.userId)}
 
-          <tr className="widgetLgTr">
+          <tr className="widgetLgTr" key={order._id}>
             <td className="widgetLgUser">
               {/* <img
                 src="https://images.pexels.com/photos/4172933/pexels-photo-4172933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
@@ -46,14 +47,14 @@ export default function WidgetLarge() {
               
               <span className="widgetLgName">{order.userId}</span>
             </td>
-            <td className="widgetLgDate">{order.createdAt}</td>
+            <td className="widgetLgDate">{format(order.createdAt)}</td>
             <td className="widgetLgAmount">${order.amount}</td>
             <td className="widgetLgStatus">
               <Button type={order.status} />
             </td>
           </tr>
 
-        })}
+        ))}
 
 
 
