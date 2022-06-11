@@ -26,6 +26,8 @@ export default function NewProduct() {
         </div>
         <button className="addProductButton">Create</button>
       </form>
+
+     
     </div>
   );
 }

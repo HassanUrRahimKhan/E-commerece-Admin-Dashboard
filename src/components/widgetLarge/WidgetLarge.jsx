@@ -52,6 +52,7 @@ export default function WidgetLarge() {
             <td className="widgetLgStatus">
               <Button type={order.status} />
             </td>
+           
           </tr>
 
         ))}

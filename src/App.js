@@ -18,11 +18,14 @@ import Product from "./pages/products/Product.jsx";
 import NewProduct from "./pages/newProduct/NewProduct.jsx";
 
 function App() {
+   const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin;
+ // const admin = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTQzMGFiNjk4YWQzNmVjOGRmYzIzYiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NDkzMDU5MywiZXhwIjoxNjU1MTg5NzkzfQ.EUvg4aReM29ny59BIscFZktYWOAWfLBnvB89YVKUEMg";
   let location = useLocation();
-  console.log("🚀 ~ file: App.js ~ line 22 ~ App ~ location", location.pathname)
+
  
-  const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin;
-  console.log(JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin);
+ console.log("🚀 ~ file: App.js ~ line 25 ~ App ~ admin", admin)
+
+  // console.log(JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin);
 
   // useEffect(() => {
   //   if(location.pathname === "/login"){
@@ -36,7 +39,7 @@ function App() {
   //   return <Login />
   // }
   if (location.pathname === "/Login") {
-    console.log(location.pathname);
+    //console.log(location.pathname);
     return <Login />
   }
   else if (admin) {
@@ -75,6 +78,7 @@ function App() {
               <Route path="/products" element={<ProductList />} />
               <Route path="/product/:productId" element={<Product />} />
               <Route path="/newproduct" element={<NewProduct />} />
+
             
 
 
