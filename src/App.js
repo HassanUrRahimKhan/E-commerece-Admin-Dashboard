@@ -18,12 +18,13 @@ import Product from "./pages/products/Product.jsx";
 import NewProduct from "./pages/newProduct/NewProduct.jsx";
 
 function App() {
-   const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin;
- // const admin = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyYTQzMGFiNjk4YWQzNmVjOGRmYzIzYiIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1NDkzMDU5MywiZXhwIjoxNjU1MTg5NzkzfQ.EUvg4aReM29ny59BIscFZktYWOAWfLBnvB89YVKUEMg";
+
+  // const admin = JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin;
+   const admin = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2UwMWIyMTU1YmZlZWY0N2YyODUxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1Nzg2NTc1NiwiZXhwIjoxNjU4MTI0OTU2fQ.Bov-rmGZU_X4NDXgjuHw8BvDuWX80T1Q-l86hffD1To";
   let location = useLocation();
 
- 
- console.log("🚀 ~ file: App.js ~ line 25 ~ App ~ admin", admin)
+
+  console.log("🚀 ~ file: App.js ~ line 25 ~ App ~ admin", admin)
 
   // console.log(JSON.parse(JSON.parse(localStorage.getItem("persist:root")).user).currentUser.isAdmin);
 
@@ -39,14 +40,14 @@ function App() {
   //   return <Login />
   // }
   if (location.pathname === "/Login") {
-    //console.log(location.pathname);
+    console.log(location.pathname);
     return <Login />
   }
   else if (admin) {
-  return (
+    return (
 
-    <>
-      {/*
+      <>
+        {/*
           <div className="container">
             <Routes>
     
@@ -64,39 +65,39 @@ function App() {
             </Routes>
            
           </div></>)} */}
-      {
-        <>
-          <Topbar />
-          <div className="container">
-            <Sidebar />
-            <Routes>
+        {
+          <>
+            <Topbar />
+            <div className="container">
+              <Sidebar />
+              <Routes>
 
-              <Route path="/" element={<Home />} />
-              <Route path="/users" element={<Userlist />} />
-              <Route path="/user/:userId" element={<User />} />
-              <Route path="/newUser" element={<NewUser />} />
-              <Route path="/products" element={<ProductList />} />
-              <Route path="/product/:productId" element={<Product />} />
-              <Route path="/newproduct" element={<NewProduct />} />
-
-            
-
-
-
-            </Routes>
-
-          </div>
-        </>
-      }
-
-
-    </>
+                <Route path="/" element={<Home />} />
+                <Route path="/users" element={<Userlist />} />
+                <Route path="/user/:userId" element={<User />} />
+                <Route path="/newUser" element={<NewUser />} />
+                <Route path="/products" element={<ProductList />} />
+                <Route path="/product/:productId" element={<Product />} />
+                <Route path="/newproduct" element={<NewProduct />} />
 
 
 
 
 
-  );
+              </Routes>
+
+            </div>
+          </>
+        }
+
+
+      </>
+
+
+
+
+
+    );
   }
 
 }
