@@ -15,5 +15,5 @@ export const publicRequest =axios.create({
 
 export const userRequest =axios.create({
     baseURL: BASE_URL,
-    headers:{token:`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2UwMWIyMTU1YmZlZWY0N2YyODUxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY1OTc2ODcyNCwiZXhwIjoxNjYwMDI3OTI0fQ.AVFxd_YZ0LmPn6teADjzQP5XFD8hxuo_u5SLJfdrSsk`} 
+    headers:{token:`Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyN2UwMWIyMTU1YmZlZWY0N2YyODUxMCIsImlzQWRtaW4iOnRydWUsImlhdCI6MTY2MDEyMTAwOSwiZXhwIjoxNjYwMzgwMjA5fQ.s7liGXGT_bsb3CeJWejx3LZkUNZ6WiUAmap7vyb53hI`} 
 });
